@@ -18,17 +18,20 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Products List</h2>
-      <ul>
+    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+      <h2 style={{ textAlign: 'center' }}>Products List</h2>
+      <ul style={{ listStyleType: 'none', padding: '0' }}>
         {products.map(product => (
-          <li key={product.id}>
-            <strong>Name:</strong> {product.productName}<br />
-            <strong>Price:</strong> ${product.price}<br />
-            <strong>Rating:</strong> {product.rating}<br />
-            <strong>Discount:</strong> {product.discount}%<br />
-            <strong>Availability:</strong> {product.availability}<br />
-            <br />
+          <li key={product.id} style={{ marginBottom: '20px', borderBottom: '1px solid #ddd', paddingBottom: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div>
+                <strong>Name:</strong> {product.productName}<br />
+                <strong>Price:</strong> ${product.price}<br />
+                <strong>Rating:</strong> {product.rating}<br />
+                <strong>Discount:</strong> {product.discount}%<br />
+                <strong>Availability:</strong> {product.availability}<br />
+              </div>
+            </div>
           </li>
         ))}
       </ul>

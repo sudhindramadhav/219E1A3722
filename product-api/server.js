@@ -71,12 +71,10 @@ app.get('/products', (req, res) => {
   res.json(products);
 });
 
-// Route to get products by category name
 app.get('/categories/:categoryname/products', (req, res) => {
   const categoryName = req.params.categoryname.toLowerCase();
 
-  // Filter products by category name
-  const filteredProducts = products.filter(product => product.productName.toLowerCase().includes(categoryName));
+  const filteredProducts = products.filter(product => product.productName.toLowerCase().includes(productName));
 
   if (filteredProducts.length === 0) {
     return res.status(404).json({ error: 'No products found for the category' });
