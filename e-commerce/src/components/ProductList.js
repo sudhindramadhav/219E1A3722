@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const ProductsList = () => {
+const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/categories/phone/products');
+        const response = await axios.get('http://localhost:3001/products');
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -15,7 +15,7 @@ const ProductsList = () => {
     };
 
     fetchProducts();
-  }, []);
+  }, []); // Ensure the empty dependency array to fetch data only once on component mount
 
   return (
     <div>
@@ -31,4 +31,4 @@ const ProductsList = () => {
   );
 };
 
-export default ProductsList;
+export default ProductList;
