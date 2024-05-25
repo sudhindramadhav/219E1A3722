@@ -1,22 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import './App.css';
-import Product from './components/Product'; // Ensure this path is correct
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ProductList from './components/ProductList';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <div>
-        <h1>Hello World</h1>
-        <Link to="/products">
-          <button>Go to Products</button>
-        </Link>
-        <Routes>
-          <Route path="/products" element={<Product />} />
-        </Routes>
+      <div className="App">
+        <Route exact path="/" component={ProductList} />
+        {/* Add more routes as needed */}
       </div>
     </Router>
   );
-}
+};
 
 export default App;
