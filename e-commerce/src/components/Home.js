@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <h1>Welcome to Our Store</h1>
-      <Link to="/products" className="centered-button">View All Products</Link>
+    <div className="button-container">
+      <button 
+        className="centered-button" 
+        style={{ padding: '10px 20px', height: '40px' }}
+      >
+        <Link to="/products" className="button-link">View All Products</Link>
+      </button>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import ProductList from './components/ProductList';
 
@@ -7,11 +8,12 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" component={Home} />
-        <Route path="/products" component={ProductList} />
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<ProductList />} />
       </Routes>
     </Router>
   );
 };
 
+// Use createRoot to render your application
 export default App;

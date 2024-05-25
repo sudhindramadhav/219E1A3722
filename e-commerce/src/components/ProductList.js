@@ -15,7 +15,7 @@ const ProductList = () => {
     };
 
     fetchProducts();
-  }, []); // Ensure the empty dependency array to fetch data only once on component mount
+  }, []);
 
   return (
     <div>
@@ -23,7 +23,12 @@ const ProductList = () => {
       <ul>
         {products.map(product => (
           <li key={product.id}>
-            {product.name} - ${product.price}
+            <strong>Name:</strong> {product.productName}<br />
+            <strong>Price:</strong> ${product.price}<br />
+            <strong>Rating:</strong> {product.rating}<br />
+            <strong>Discount:</strong> {product.discount}%<br />
+            <strong>Availability:</strong> {product.availability}<br />
+            <br />
           </li>
         ))}
       </ul>
